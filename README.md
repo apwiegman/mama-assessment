@@ -1,7 +1,7 @@
 # mama-assessment
 
 #############################
-INSTRUCTIONS TO RUN:
+# INSTRUCTIONS TO RUN:
 #############################
 1. unzip
 2. navigate to project home directory in command line/ terminal. Ie - directory that contains (.idea, .mvn, log etc folders) in unzipped folder
@@ -13,7 +13,7 @@ java -jar ussd-0.0.1-SNAPSHOT.jar --db-username username --db-password password
 6. endpoint avaiblable at localhost:8080/api/v1/ussd
 
 #############################
-ASSUMPTIONS:
+# ASSUMPTIONS:
 #############################
 1. Everything needs to be persisted.
 2. WASP handles sessionId creation and expiration - not enforcing any of checks as a result.
