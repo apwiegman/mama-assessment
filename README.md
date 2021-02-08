@@ -14,10 +14,9 @@ java -jar ussd-0.0.1-SNAPSHOT.jar --db-username username --db-password password
 - Everything needs to be persisted.
 - WASP handles sessionId creation and expiration - not enforcing any of checks as a result.
 - Assume WASP does very little to no error handling. All exceptions need to therefore be structured such that they can be passed back to a client. Error messages were therefore customised and in some instances combined with the message, so a customer can make an appropriate selection. It is assumed the WASP implements a degree of error handling. The inputs fields in the post message are validated with assumptions made about plausible maximum lengths.
-	3.1 sessionId = 40 charachters : it is unique for each session, therefore can accomodate a very wide range
-	3.2 msisdn = 18 chachters : phone numbers usually 11 or 12 characters, therefore 18 characters should be safe
-	3.3 userEntry = 9 : largest number needs to accomodate is amount to be transferred. Given use case probably shouldn't be transfering more than  R 1 million otherwise exceeding Single Discretionary Allowance limits. Given this constraint 9 charachters should be 
-			a conservative limit. Minimum transactional amount not considered given busienss requirements, but should be enforced.
+	- sessionId = 40 charachters : it is unique for each session, therefore can accomodate a very wide range
+	- msisdn = 18 chachters : phone numbers usually 11 or 12 characters, therefore 18 characters should be safe
+	- userEntry = 9 : largest number needs to accomodate is amount to be transferred. Given use case probably shouldn't be transfering more than  R 1 million otherwise exceeding Single Discretionary Allowance limits. Given this constraint 9 charachters should be a conservative limit. Minimum transactional amount not considered given busienss requirements, but should be enforced.
 - ZAR - KWS: 6.10 is a typo and should be KES.
 - Assume that there are no fees subracted during the currency conversion as not stated, but would need to be added based on percentage supplied.
 - No authentication service added as this appears to be a marketing tool open to all customers (current and future). Depends on what greater architechture looks like, but integrating with Cognito User Pools and API gateway may be one plausible solution.
